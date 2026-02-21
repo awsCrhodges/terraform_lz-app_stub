@@ -26,3 +26,12 @@ module "lambda" {
   log_retention_days = 7
 
 }
+
+module "apigw" {
+  source      = "../../modules/apigw"
+  name_prefix = var.name_prefix
+
+  lambda_invoke_arn    = module.lambda.invoke_arn
+  lambda_function_name = module.lambda.function_name
+
+}

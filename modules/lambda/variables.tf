@@ -7,7 +7,7 @@ variable "lambda_runtime" {
 }
 variable "lambda_timeout" {
   type    = number
-  default = 5
+  default = 120
 }
 variable "lambda_memory_size" {
   type    = number
