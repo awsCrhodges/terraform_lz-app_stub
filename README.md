@@ -14,3 +14,19 @@ This project provisions a minimal AWS environment using Terraform, including:
   - Use modular Terraform structure
   - Implement remote state and locking
   - Apply cost-conscious design
+
+## Screenshots
+- VPC
+  ![VPC](docs/screenshots/vpc.png)
+
+- Public Route Table
+  ![Route Table](docs/screenshots/route_table.png)
+
+- Subnets
+  ![Subnets](docs/screenshots/subnets_created.png)
+
+- DynamoDB
+  ![DynamoDB Table](docs/screenshots/document_table.png)
+
+- Internet Gateway
+  ![IGW](docs/screenshots/igw.png)
