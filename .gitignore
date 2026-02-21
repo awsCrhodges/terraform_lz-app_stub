@@ -1,5 +1,6 @@
-ignore .terraform/
-ignore *.tfstate
-ignore *.tfstate.*
+.terraform/
+*.tfstate
+*.tfstate.*
 .terraform.lock.hcl
 crash.log
+terraform.tfvars
