@@ -12,13 +12,13 @@ module "network" {
 }
 
 module "iam" {
-  source    = "../../modules/iam"
+  source      = "../../modules/iam"
   name_prefix = var.name_prefix
 
 }
 
 module "lambda" {
-  source = "../../modules/lambda"
+  source      = "../../modules/lambda"
   name_prefix = var.name_prefix
 
   lambda_role_arn = module.iam.lambda_role_arn

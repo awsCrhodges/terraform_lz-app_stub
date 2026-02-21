@@ -1,15 +1,15 @@
 variable "name_prefix" {
-    type = string
+  type = string
 
 }
 
-variable "vpc_cidr"{
-    type = string
+variable "vpc_cidr" {
+  type = string
 
 }
 
 variable "aws_region" {
-    type = string
-    default = "us-east-1"
+  type    = string
+  default = "us-east-1"
 
 }
