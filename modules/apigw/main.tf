@@ -2,6 +2,13 @@ resource "aws_apigatewayv2_api" "http" {
   name          = "${var.name_prefix}-http-api"
   protocol_type = "HTTP"
 
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-http-api"
+    }
+  )
+
 }
 
 resource "aws_apigatewayv2_integration" "lambda" {
@@ -25,6 +32,13 @@ resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.http.id
   name        = "$default"
   auto_deploy = true
+
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-http-api-stage"
+    }
+  )
 
 }
 

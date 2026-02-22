@@ -15,6 +15,13 @@ resource "aws_iam_role" "lambda_exec" {
   name               = "${var.name_prefix}-lambda-exec"
   assume_role_policy = data.aws_iam_policy_document.assume_lambda.json
 
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-lambda-exec"
+    }
+  )
+
 }
 
 resource "aws_iam_role_policy_attachment" "basic_exec" {

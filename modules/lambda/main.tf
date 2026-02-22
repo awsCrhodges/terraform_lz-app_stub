@@ -9,6 +9,12 @@ resource "aws_cloudwatch_log_group" "lambda" {
   name              = "/aws/lambda/${var.name_prefix}-hello"
   retention_in_days = var.log_retention_days
 
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-hello-log-group"
+    }
+  )
 }
 
 resource "aws_lambda_function" "hello" {
@@ -23,6 +29,14 @@ resource "aws_lambda_function" "hello" {
 
   timeout     = var.lambda_timeout
   memory_size = var.lambda_memory_size
+
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-hello"
+    }
+
+  )
 
   depends_on = [aws_cloudwatch_log_group.lambda]
 
