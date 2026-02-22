@@ -3,18 +3,22 @@ resource "aws_vpc" "this" {
   enable_dns_hostnames = true
   enable_dns_support   = true
 
-  tags = {
-    Name = "${var.name_prefix}-vpc"
-  }
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-vpc"
+  })
 }
 
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
-  tags = {
-    Name = "${var.name_prefix}-igw"
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-igw"
 
-  }
+  })
 
 }
 
@@ -24,7 +28,11 @@ resource "aws_subnet" "public_a" {
   availability_zone       = "${var.aws_region}a"
   map_public_ip_on_launch = true
 
-  tags = { Name = "${var.name_prefix}-public-a" }
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-public-a"
+  })
 
 }
 
@@ -34,7 +42,11 @@ resource "aws_subnet" "public_b" {
   availability_zone       = "${var.aws_region}b"
   map_public_ip_on_launch = true
 
-  tags = { Name = "${var.name_prefix}-public-b" }
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-public-b"
+  })
 
 }
 
@@ -47,7 +59,11 @@ resource "aws_route_table" "public" {
 
   }
 
-  tags = { Name = "${var.name_prefix}-public-rt" }
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-public-rt"
+  })
 
 }
 
@@ -84,8 +100,10 @@ resource "aws_security_group" "web" {
     cidr_blocks = ["0.0.0.0/0"]
 
   }
-  tags = {
-    Name = "${var.name_prefix}-web-sg"
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.name_prefix}-web-sg"
 
-  }
+  })
 }

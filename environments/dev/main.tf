@@ -9,6 +9,8 @@ module "network" {
   vpc_cidr    = var.vpc_cidr
   aws_region  = var.aws_region
 
+  common_tags = local.common_tags
+
 }
 
 module "iam" {
@@ -44,9 +46,10 @@ module "apigw" {
 
 locals {
   common_tags = {
-    Project = "terraform-lz-app-stub"
+    Project     = "terraform-lz-app-stub"
     Environment = "dev"
-    ManagedBy = "Terraform-AWSCrhodges"
+    ManagedBy   = "Terraform"
+    Owner       = "AWSCrhodges"
   }
 
 }
