@@ -17,18 +17,37 @@ This project provisions a minimal AWS environment using Terraform, including:
 
 ## Screenshots
 - VPC
+
+---
+
   ![VPC](docs/screenshots/vpc.png)
 
+
 - Public Route Table
+
+---
+
   ![Route Table](docs/screenshots/route_table.png)
 
+
 - Subnets
+
+---
+
   ![Subnets](docs/screenshots/subnets_created.png)
 
+
 - DynamoDB
+
+---
+
   ![DynamoDB Table](docs/screenshots/document_table.png)
 
+
 - Internet Gateway
+
+---
+
   ![IGW](docs/screenshots/igw.png)
 
 
