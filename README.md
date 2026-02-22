@@ -31,15 +31,28 @@ This project provisions a minimal AWS environment using Terraform, including:
 - Internet Gateway
   ![IGW](docs/screenshots/igw.png)
 
+
 - API Endpoint Created
+
+---
+
   ![APIGW](docs/screenshots/api_endpoint_created.png)
 
 - API Creation Bash Output
+
+---
+
   ![APIGW Creation](docs/screenshots/terraform_plan_output.png)
 
 - Terraform Missing Module Fix
+
+---
+
   ![Missing Module](docs/screenshots/intalling_modules.png)
 
 - Successful Lambda Execution Curl
+
+---
+
   ![CURL](docs/screenshots/terraform_apply_successful_200_output.png)
 
